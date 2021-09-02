@@ -1,0 +1,684 @@
+body {
+    margin: 0;
+}
+
+*::selection {
+    background: #007aff;
+}
+
+*,
+*:before,
+*:after {
+    box-sizing: border-box;
+}
+
+h1 {
+    margin: 0;
+    text-align: center;
+    font-family: Ubuntu, sans-serif;
+}
+
+.container {
+    max-width: 1200px;
+    padding: 0 15px;
+    margin: 0 auto;
+}
+
+/*----------------------------HEADER----------------------------*/
+
+#top_scroll {
+    width: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 5;
+    transition: .6s;
+}
+
+#top_scroll.default {
+    position: fixed;
+    top: 0;
+    background-color: #f8f8f8;
+    -webkit-box-shadow: 10px 10px 55px -20px rgba(0,0,0,0.75);
+    -moz-box-shadow: 10px 10px 55px -20px rgba(0,0,0,0.75);
+    box-shadow: 10px 10px 55px -20px rgba(0,0,0,0.75);
+}
+
+.header {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    padding-top: 15px;
+    padding-bottom: 10px;
+}
+
+.top_inner {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.logo {
+    width: 114px;
+    height: 60px;
+}
+
+.menu {
+    display: flex;
+    align-items: center;
+    font-weight: bolder;
+    font-size: 18px;
+}
+
+.menu_link {
+    vertical-align: top;
+    margin-left: 27px;
+    padding-bottom: 5px;
+    font-family: OpenSans-Semibold, sans-serif;
+    color: #1f285c;
+    position: relative;
+    text-decoration: none;
+}
+
+.menu_link:before {
+    content: "";
+    display: block;
+    width: 100%;
+    height: 2px;
+
+    background-color: #1d2359;
+    opacity: 0;
+    transition: opacity .3s linear;
+
+    position: absolute;
+    bottom: 0;
+    left: 0;
+}
+
+.menu_link:after {
+    content: "";
+    position: absolute;
+    opacity: 0;
+    width: 7px;
+    height: 7px;
+    background-color: #1d2359;
+    bottom: -2px;
+    left: 50%;
+    -webkit-transform: translateX(-50%) rotate(45deg);
+    transform: translateX(-50%) rotate(45deg);
+}
+
+.menu_link:hover:before {
+    opacity: 1;
+}
+
+.menu_link:hover {
+    overflow: hidden;
+    transition: all .3s linear;
+}
+
+.menu_link:hover:after {
+    opacity: 1;
+}
+
+.reg {
+    display: flex;
+    align-items: center;
+    margin: -2px 0 0;
+}
+
+.link_sign_in {
+    font-size: 18px;
+    font-family: OpenSans-Semibold, sans-serif;
+    color: #83bdfc;
+    transition: .5s;
+    padding: 5px 45px;
+    text-decoration: none;
+}
+
+.link_sign_in:hover {
+    opacity: .5;
+}
+
+.link_sign_up {
+    background-color: #007aff;
+    font-size: 18px;
+    font-family: OpenSans-Semibold, sans-serif;
+    color: #fefefe;
+    transition: .5s;
+    border-radius: 8px;
+    padding: 5px 45px;
+    text-decoration: none;
+}
+
+.link_sign_up:hover {
+    opacity: .5;
+}
+
+/*----------------------------TOP----------------------------*/
+
+.top {
+    position: relative;
+    z-index: 4;
+}
+
+.intro {
+    width: 100%;
+    background: url("img/bg.png") no-repeat center bottom;
+}
+
+.lend_count {
+    padding-top: 140px;
+    padding-bottom: 333px;
+    text-align: center;
+    font-size: 105px;
+    font-weight: 300;
+    font-family: Ubuntu, sans-serif;
+    color: #ffffff;
+    position: relative;
+    background-size: cover;
+    z-index: 2;
+}
+
+.lend {
+    margin: 0;
+    padding: 0;
+    border: 0;
+    outline: 0;
+    font-size: 100%;
+    vertical-align: baseline;
+    background: transparent;
+}
+
+.already {
+    margin: 0;
+    font-weight: 400;
+}
+
+.counter {
+    font-weight: 700;
+}
+
+.clients {
+    font-weight: 400;
+}
+
+.btn_profile {
+    margin: 30px auto 0;
+    padding: 15px 100px;
+    font-size: 30px;
+    border: 3px solid #eff1f2;
+    border-radius: 20px;
+    color: #fefefe;
+    font-family: Ubuntu, sans-serif;
+    -webkit-transition: border-radius .4s;
+    transition: border-radius .4s;
+    text-decoration: none;
+}
+
+.btn_profile:hover {
+    border-radius: 40px;
+}
+
+/*----------------------------PAYMENT----------------------------*/
+
+.plag {
+    margin-top: -22px;
+    height: 100px;
+    position: relative;
+    background-color: #eff1f2;
+    z-index: 3;
+}
+
+.payment {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-left: 140px;
+    margin-right: 140px;
+    padding-top: 25px;
+}
+
+.accept {
+    margin: 0;
+    font-size: 25px;
+    font-family: Ubuntu, sans-serif;
+    color: #1f285c;
+}
+
+.pay {
+    margin-right: 27px;
+    transition: .5s;
+}
+
+.pay:hover {
+    opacity: .5;
+}
+
+/*----------------------------CONTENT ABOUT TWEAGO----------------------------*/
+
+.content {
+    background: #ffffff;
+    padding: 90px 0 230px;
+}
+
+.foto {
+    position: absolute;
+    transform: translate(-37%, -50%);
+}
+
+.foto2 {
+    width: 1050px;
+    height: auto;
+}
+
+.des {
+    float: right;
+    max-width: 665px;
+    width: 100%;
+    position: relative;
+    padding-right: 200px;
+    z-index: 2;
+}
+
+.titles {
+    margin: 0 0 30px;
+    color: #041637;
+    font-family: Ubuntu, sans-serif;
+    font-size: 60px;
+    font-weight: 100;
+}
+
+.lor {
+    color: #041637;
+    font-family: "Open Sans", serif;
+    font-size: 16px;
+}
+
+/*----------------------------CONTENT HOW IT'S WORKS----------------------------*/
+
+.container2 {
+    width: 100%;
+    overflow: hidden;
+    position: relative;
+    height: 880px;
+}
+
+.foto3 {
+    position: absolute;
+    transform: translate(45%, -25%);
+}
+
+.des2 {
+    margin-top: 250px;
+    margin-left: 130px;
+    max-width: 665px;
+    width: 100%;
+    position: relative;
+    padding-right: 200px;
+    z-index: 2;
+}
+
+.lor {
+    max-width: 450px;
+    font-family: OpenSans, sans-serif;
+    font-size: 16px;
+    color: #041637;
+    letter-spacing: 0;
+    line-height: 24px;
+}
+
+.input-form {
+    width: 47%;
+    box-sizing: border-box;
+    padding: 15px 20px 15px 55px;
+    font-size: 16px;
+    border: 1px solid #eff1f2;
+    border-radius: 10px;
+    outline: none;
+    margin-right: 15px;
+    transition: .5s;
+}
+
+.icon {
+    position: absolute;
+    padding: 18px 12px 13px 14px;
+    border-right: 1px solid #eff1f2;
+}
+
+.btn {
+    width: 47%;
+    font-family: sans-serif;
+    cursor: pointer;
+    text-align: center;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    outline: none;
+    border: none;
+    font-size: 19px;
+    padding: 13px 45px 15px 45px;
+    border-radius: 10px;
+    color: #ffffff;
+    transition: .5s;
+    background-image: linear-gradient(to left, #615ffc, #007aff);
+}
+
+.btn:hover {
+    opacity: .5;
+}
+
+/*----------------------------CAROUSEL----------------------------*/
+
+.carousel {
+    background-color: #eff1f2;
+    padding: 0 0 70px;
+}
+
+.slider {
+    width: 650px;
+    margin: 0 auto;
+}
+
+.slider-item {
+    padding: 60px 0 20px;
+    color: #041637;
+    font-size: 40px;
+}
+
+.slider-content {
+    font-family: "Open Sans", sans-serif;
+    color: #041637;
+    font-size: 16px;
+    text-align: center;
+}
+
+.arrow-prev {
+    left: -80px;
+    position: absolute;
+    top: 36%;
+}
+
+.arrow-next {
+    right: -80px;
+    position: absolute;
+    top: 36%;
+}
+
+/*----------------------------TRY TWEAGO NOW----------------------------*/
+
+.try-tweago {
+    background-color: #0060ff;
+    padding-top: 130px;
+    padding-bottom: 140px;
+}
+
+.container-try-tweago {
+    max-width: 760px;
+}
+
+.title-try-tweago-now {
+    font-weight: 200;
+    font-size: 70px;
+    margin-bottom: 55px;
+    color: #ffffff;
+}
+
+.button-started {
+    height: 62px;
+}
+
+.input-form-try {
+    width: 47%;
+    height: 61px;
+    box-sizing: border-box;
+    padding: 15px 20px 15px 65px;
+    font-size: 18px;
+    border: 1px solid #eff1f2;
+    border-radius: 10px;
+    outline: none;
+    margin-right: 15px;
+    transition: .5s;
+}
+
+.icon-try {
+    position: absolute;
+    padding: 19px 12px 19px 14px;
+    border-right: 1px solid #eff1f2;
+}
+
+/*----------------------------PRICING----------------------------*/
+
+.section-pricing {
+    margin-bottom: 100px;
+}
+
+.price {
+    text-align: center;
+}
+
+.pricing-row {
+    display: flex;
+    flex-direction: row;
+}
+
+.title-pricing {
+    font-size: 60px;
+    font-weight: 100;
+    font-family: Ubuntu, sans-serif;
+    margin: 90px auto 50px;
+}
+
+.pricing-title_plan {
+    margin-top: 10px;
+    font-size: 20px;
+    font-family: Ubuntu, sans-serif;
+    font-weight: bolder;
+    text-transform: uppercase;
+}
+
+.pricing-title_price {
+    font-size: 20px;
+    font-weight: bolder;
+    font-family: Ubuntu, sans-serif;
+}
+
+.purchase-plan {
+    display: block;
+    max-width: 275px;
+    font-size: 20px;
+    font-family: Ubuntu, sans-serif;
+    padding: 15px;
+    margin: 15px auto 20px;
+    color: #ffffff;
+    border-radius: 10px;
+    transition: .5s;
+    background-image: linear-gradient(to left, #615ffc, #007aff);
+    text-decoration: none;
+}
+
+.purchase-plan:hover {
+    opacity: .5;
+}
+
+.price-content {
+    font-family: "Open Sans", sans-serif;
+    font-size: 16px;
+    color: #797979;
+    line-height: 24px;
+    margin: 0 68px;
+}
+
+.price-border {
+    border-right: 1px solid #000;
+}
+
+.wight-hr {
+    margin: 28px auto;
+    max-width: 250px;
+}
+
+.tick {
+    width: 23px;
+    height: 17px;
+    margin: 5px 5px;
+}
+
+.price_bottom-item {
+    display: flex;
+    flex-direction: row;
+    margin: 0 auto 20px;
+    text-align: left;
+    font-family: "Open Sans", sans-serif;
+    line-height: 24px;
+    font-size: 16px;
+    color: #041637;
+}
+
+.bottom-item {
+    margin: 0 68px;
+    max-width: 250px;
+}
+
+/*----------------------------FOOTER----------------------------*/
+
+.footer {
+    background-color: #eff1f2;
+}
+
+.information {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    padding: 100px 0 100px;
+    max-width: 1000px;
+}
+
+.inf-title {
+    margin: 0 auto 20px;
+    font-size: 25px;
+    color: #515151;
+    font-family: Ubuntu-medium, sans-serif;
+}
+
+.span-contacts {
+    font-weight: 900;
+    font-size: 18px;
+    color: #515151;
+    font-family: "Open Sans", sans-serif;
+}
+
+.cont-link {
+    font-weight: 100;
+    color: #515151;
+    margin-left: 10px;
+    text-decoration: none;
+    transition: .4s;
+}
+
+.cont-link:hover {
+    opacity: .4;
+}
+
+.ul-row_link {
+    padding-left: 0;
+    list-style-type: none;
+}
+
+.link-item {
+    color: #515151;
+    font-family: "Open Sans", sans-serif;
+    text-decoration: none;
+    transition: .4s;
+}
+
+.link-item:hover {
+    opacity: .4;
+}
+
+.footer-link {
+    font-size: 18px;
+    font-weight: 400;
+    line-height: 1.33333;
+    margin-bottom: 13px;
+}
+
+.footer-logo {
+    width: calc(25% - 60px);
+}
+
+/*----------------------------LANGUAGE----------------------------*/
+
+.dropbtn {
+    padding: 10px;
+    cursor: pointer;
+}
+
+/* The container <div> - needed to position the dropdown content */
+.dropdown {
+    margin-top: 45px;
+    font-family: Ubuntu, sans-serif;
+    color: #1f285c;
+    position: relative;
+    display: inline-block;
+}
+
+/* Dropdown Content (Hidden by Default) */
+.dropdown-content {
+    border-radius: 8px;
+    display: none;
+    position: absolute;
+    background-color: #f9f9f9;
+    width: 140px;
+}
+
+.dropbtn
+{
+    background: url('img/flag.png') no-repeat left center;
+    padding-left: 45px;
+    width: 40px;
+}
+
+.dropbtn::after {
+    background: rgba(0, 0, 0, 0) url("img/next_lg.png") no-repeat scroll center center;
+    content: "";
+    height: 24px;
+    position: absolute;
+    left: 100px;
+    right: 0;
+    top: 7px;
+    width: 25px;
+}
+
+.dropdown-content a:first-child
+{
+    background: url('img/flag.png') no-repeat left center;
+}
+
+.dropdown-content a:last-child
+{
+    background: url('img/Russia-flag.png') no-repeat left center;
+    background-size: 36px auto;
+}
+
+/* Links inside the dropdown */
+.dropdown-content a {
+    border-radius: 8px;
+    font-family: Ubuntu, sans-serif;
+    color: #1f285c;
+    padding: 2px 0 2px 45px;
+    text-decoration: none;
+    display: block;
+}
+
+/* Change color of dropdown links on hover */
+.dropdown-content a:hover {
+    background-color: #0060ff;
+    color: #fefefe;
+}
+
+/* Show the dropdown menu on hover */
+.dropdown:hover .dropdown-content {
+    display: block;
+}
